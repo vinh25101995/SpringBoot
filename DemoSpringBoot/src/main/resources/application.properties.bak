@@ -1,4 +1,4 @@
-spring.datasource.url=jdbc:postgresql://postgres3:5434/taco
+spring.datasource.url=jdbc:postgresql://postgres3:5432/taco
 spring.datasource.username=postgres
 spring.datasource.password=letmein
 logging.level.org.hibernate.SQL=DEBUG
