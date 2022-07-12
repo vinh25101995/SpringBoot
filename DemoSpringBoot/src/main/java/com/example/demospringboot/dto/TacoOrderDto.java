@@ -1,31 +1,27 @@
 package com.example.demospringboot.dto;
 
-import com.example.demospringboot.dto.Taco;
+import com.example.demospringboot.entity.Taco;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Component
 @Data
-public class TacoOrder implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class TacoOrderDto {
     private long id;
+
     private Date placedAt;
 
-    String name = "deliveryName";
     @NotBlank(message = "Delivery Name can't be empty")
     private String deliveryName;
 
     @NotBlank(message = "Delivery Street can't be empty")
     private String deliveryStreet;
-
-    @NotBlank(message = "Time can't be blank")
-    private String deliveryTime;
 
     @NotBlank(message = "City can't be blank")
     private String deliveryCity;
@@ -43,11 +39,12 @@ public class TacoOrder implements Serializable {
     private String ccExpiration;
 
     @NotBlank(message = "ccCVV can't be blank")
-    private String ccCVV;
+    private String ccCvv;
 
-    private List<Taco> tacos = new ArrayList<>();
+    private List<TacoDto> tacos = new ArrayList<>();
 
-    public void addTaco(Taco taco){
+    public void addTaco(TacoDto taco){
+        int size = tacos.size();
         this.tacos.add(taco);
     }
 }

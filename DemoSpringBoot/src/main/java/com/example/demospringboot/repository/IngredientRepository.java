@@ -1,6 +1,6 @@
 package com.example.demospringboot.repository;
 
-import com.example.demospringboot.dto.Ingredient;
+import com.example.demospringboot.entity.Ingredient;
 
 import java.util.Optional;
 
